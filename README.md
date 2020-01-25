@@ -23,7 +23,7 @@ And edit your $WORKDIR/django/my_docker_django_project/settings.py
 
 ## edit db settings
 ```bash
-cd $WORKDIR/docker
+cd $WORKDIR
 echo 'MYSQL_ROOT_PASSWORD=<YOUR_DB_ROOT_PASSWORD>' >> mariadb.env
 echo 'MYSQL_DATABASE=mariadb' >> mariadb.env
 echo 'MYSQL_USER=<YOUR_DB_USER>' >> mariadb.env
@@ -36,7 +36,7 @@ echo 'PASSWORD=<YOUR_DB_PASSWORD>' >> .env
 
 ## start docker
 ```bash
-cd $WORKDIR/docker
+cd $WORKDIR
 docker-compose up --build
 ```
 

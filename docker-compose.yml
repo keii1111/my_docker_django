@@ -2,7 +2,7 @@ version: '3'
 services:
     django:
         restart: always
-        build: ../django
+        build: ./django
         expose:
             - "3031"
         depends_on:
@@ -10,6 +10,7 @@ services:
         command: bash -c "python manage.py migrate && gunicorn my_docker_django_project.wsgi -b 0.0.0.0:3031"
         volumes:
             - "staticdata:/opt/static/"
+        entrypoint: ./wait-for-mariadb.sh mariadb:3306
     
     nginx:
         image: nginx
@@ -19,7 +20,7 @@ services:
         ports:
             - "80:80"
         volumes:
-            - "../nginx/:/etc/nginx"
+            - "./nginx/:/etc/nginx"
             - "staticdata:/opt/code/static"
 
     mariadb:
