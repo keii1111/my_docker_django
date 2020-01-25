@@ -15,7 +15,7 @@ import environ
 
 
 env = environ.Env()
-env.read_env('.env')
+env.read_env('mariadb.env')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mariadb',
-        'USER': env('USER'),
-        'PASSWORD': env('PASSWORD'),
+        'USER': env('MYSQL_USER'),
+        'PASSWORD': env('MYSQL_PASSWORD'),
         'HOST': 'mariadb',
         'PORT': '3306'
     }
