@@ -1,7 +1,7 @@
 ## Description
 This app is a django app template working on docker.
 
-## setting this app
+## Setting this app
 git clone this repository.
 ```bash
 cd ./my_docker_django/
@@ -9,7 +9,7 @@ export WORKDIR=`pwd`
 docker build -t django3.0 -f $WORKDIR/django/Dockerfile.base ./django
 ```
 
-### optional
+### Optional
 ```bash
 cd $WORKDIR/django
 docker run --rm \
@@ -21,7 +21,7 @@ docker run --rm \
 And edit your $WORKDIR/django/my_docker_django_project/settings.py 
 
 
-## edit db settings
+## Edit db settings
 ```bash
 cd $WORKDIR/django
 echo 'MYSQL_ROOT_PASSWORD=<YOUR_DB_ROOT_PASSWORD>' >> mariadb.env
@@ -30,11 +30,11 @@ echo 'MYSQL_USER=<YOUR_DB_USER>' >> mariadb.env
 echo 'MYSQL_PASSWORD=<YOUR_DB_PASSWORD>' >> mariadb.env
 ```
 
-## start docker
+## Start docker
 ```bash
 cd $WORKDIR
 docker-compose up --build
 ```
 
-## you can see starting django apps
-access localhost on your browser.
+## You can see starting django apps
+Access localhost on your browser.
