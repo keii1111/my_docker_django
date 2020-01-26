@@ -38,3 +38,13 @@ docker-compose up --build
 
 ## You can see starting django apps
 Access localhost on your browser.
+
+## Create your django app
+Run the command in terminal as below.
+```bash
+cd $WORKDIR/django
+docker run --rm \
+  --mount type=bind,src=$(pwd),dst=/opt/code \
+  django3.0 \
+  django-admin startapp my_docker_django_app  
+```
