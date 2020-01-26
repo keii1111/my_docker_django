@@ -45,6 +45,6 @@ Run the command in terminal as below.
 cd $WORKDIR/django
 docker run --rm \
   --mount type=bind,src=$(pwd),dst=/opt/code \
-  django3.0 \
+  mydockerdjango_django \
   django-admin startapp my_docker_django_app  
 ```
