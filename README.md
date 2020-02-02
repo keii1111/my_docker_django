@@ -5,7 +5,7 @@ This app is a django app template working on docker.
 git clone this repository.
 ```bash
 cd ./my_docker_django/
-export WORKDIR=`pwd`
+WORKDIR=`pwd`
 docker build -t django3.0 -f $WORKDIR/django/Dockerfile.base ./django
 ```
 
@@ -42,9 +42,6 @@ Access localhost on your browser.
 ## Create your django app
 Run the command in terminal as below.
 ```bash
-cd $WORKDIR/django
-docker run --rm \
-  --mount type=bind,src=$(pwd),dst=/opt/code \
-  mydockerdjango_django \
-  django-admin startapp my_docker_django_app  
+cd $WORKDIR
+docker-compose run --rm django django-admin django-admin startapp <YOUR_APP_NAME>
 ```
