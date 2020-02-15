@@ -17,6 +17,9 @@ import environ
 env = environ.Env()
 env.read_env('mariadb.env')
 
+# The project name of this application.
+PROJECT_NAME = 'my_docker_django_project'
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -54,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'my_docker_django_project.urls'
+ROOT_URLCONF = f'{PROJECT_NAME}.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'my_docker_django_project.wsgi.application'
+WSGI_APPLICATION = f'{PROJECT_NAME}.wsgi.application'
 
 
 # Database

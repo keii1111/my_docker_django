@@ -13,6 +13,5 @@ until mysql --host="$host" --user="$MYSQL_USER" --password="$MYSQL_PASSWORD" -e 
 done
 
 >&2 echo "MariaDB is up -executing command"
-python manage.py migrate && gunicorn my_docker_django_project.wsgi -b 0.0.0.0:3031
 
 exec $cmd

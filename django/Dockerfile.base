@@ -1,6 +1,0 @@
-FROM python:3.8
-RUN mkdir /opt/code
-WORKDIR /opt/code
-
-ADD requirements.base.txt /opt/code
-RUN pip install --no-cache-dir -r requirements.base.txt
