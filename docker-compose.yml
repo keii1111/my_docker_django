@@ -9,7 +9,7 @@ services:
             - mariadb
         volumes:
             - "staticdata:/opt/static/"
-        entrypoint: ./wait-for-mariadb.sh mariadb "gunicorn coffearch.wsgi -b 0.0.0.0:3031"
+        entrypoint: ./wait-for-mariadb.sh mariadb "gunicorn my_docker_django_project.wsgi -b 0.0.0.0:3031"
     
     nginx:
         image: nginx

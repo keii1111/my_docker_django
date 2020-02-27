@@ -57,6 +57,13 @@ Edit django/my_docker_django_project/settings.py as below.
 # PROJECT_NAME = 'my_docker_django_project'
 PROJECT_NAME = '<YOUR_PROJECT_NAME>'
 ```
+
+And edit docker-compose.yml as below.
+```
+# entrypoint: ./wait-for-mariadb.sh mariadb "gunicorn my_docker_django_project.wsgi -b 0.0.0.0:3031"
+entrypoint: ./wait-for-mariadb.sh mariadb "gunicorn ${YOUR_PROJECT_NAME}.wsgi -b 0.0.0.0:3031"
+```
+
 And run the command in terminal as below.
 Edit the part enclosed in <>.
 ```bash
